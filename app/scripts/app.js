@@ -6,14 +6,9 @@ angular
     $routeProvider
 
       .when('/', {
-        templateUrl: 'views/movies.html',
-        controller: 'MoviesCtrl'
-      })
-
-      .when('/watchlist', {
-        templateUrl: 'views/watchlist.html',
-        controller: 'WatchlistCtrl'
-      })      
+        templateUrl: 'views/starter.html',
+        controller: 'StarterCtrl'
+      })     
       
       .otherwise({
         redirectTo: '/'
