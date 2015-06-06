@@ -1,35 +1,19 @@
 'use strict';
-
-/**
- * @ngdoc service
- * @name candyflixAngularApp.Movies
- * @description
- * # Movies
- * Service in the candyflixAngularApp.
- */
 angular.module('candyflixAngularApp')
   .service('Movies', function($http, $q) {
-
-
     this.movies = [];
-
     var API = 'https://candyflix-api.herokuapp.com';
-
     function loadMovies() {
       var deferred = $q.defer();
-
       $http.get(API + '/randomMovies')
       .then(function(res) {
         deferred.resolve(res.data);
       })
-
       return deferred.promise;
     }
-
     this.getMovie = function() {
       var deferred = $q.defer();
       var service = this;
-
       if (service.movies.length > 3) {
         deferred.resolve(service.movies.shift());
       } else if (service.movies.length) {
@@ -45,8 +29,6 @@ angular.module('candyflixAngularApp')
           deferred.resolve(service.movies.shift());
         })
       }
-
       return deferred.promise;
     }
-
   });

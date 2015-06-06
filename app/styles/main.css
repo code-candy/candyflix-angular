@@ -2,6 +2,10 @@
   display: none;
 }
 
+.cc-card-image img {
+  max-height: 486px;
+}
+
 .pointer {
   cursor: pointer;
 }
